@@ -2,7 +2,7 @@
 
 namespace AnyCAD.Demo.Geometry
 {
-    class Geometry_SpoineToArcs : TestCase
+    class Geometry_SplineToArcs : TestCase
     {
         public override void Run(IRenderView render)
         {

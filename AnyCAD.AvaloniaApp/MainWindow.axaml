@@ -19,9 +19,9 @@
 					</TreeView>
 				</ScrollViewer>
 			</TabItem>
-			<TabItem Header="高级功能">
+			<TabItem Header="运动仿真">
 				<ScrollViewer Grid.Column="0" >
-					<TreeView ItemsSource="{Binding AdvItems}" SelectionChanged ="TreeView_SelectedItemChanged">
+					<TreeView ItemsSource="{Binding SimulateItems}" SelectionChanged ="TreeView_SelectedItemChanged">
 						<TreeView.ItemTemplate>
 							<TreeDataTemplate ItemsSource="{Binding Items}">
 								<TextBlock Text="{Binding Header}"/>
@@ -29,7 +29,18 @@
 						</TreeView.ItemTemplate>
 					</TreeView>
 				</ScrollViewer>
-			</TabItem>	
+			</TabItem>
+			<TabItem Header="高级建模">
+				<ScrollViewer Grid.Column="0" >
+					<TreeView ItemsSource="{Binding QuickSolidItems}" SelectionChanged ="TreeView_SelectedItemChanged">
+						<TreeView.ItemTemplate>
+							<TreeDataTemplate ItemsSource="{Binding Items}">
+								<TextBlock Text="{Binding Header}"/>
+							</TreeDataTemplate>
+						</TreeView.ItemTemplate>
+					</TreeView>
+				</ScrollViewer>
+			</TabItem>
 		</TabControl>
 
 		<GridSplitter Grid.Column="1" ResizeDirection="Columns"/>

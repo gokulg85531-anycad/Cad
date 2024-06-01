@@ -6,10 +6,11 @@ namespace AnyCAD.Demo.Geometry
     {
         public override void Run(IRenderView render)
         {
+            QuickSolidEngineManager.Instance().Initialize();
+
             var face = ShapeIO.Open(GetResourcePath("Split/face.brep"));
             var edges = face.GetChildren(EnumTopoShapeType.Topo_EDGE);
             var plane = new GPln();
-            int ii = 0;
             foreach(var edge in edges)
             {
                 var node = render.ShowShape(edge, ColorTable.Green);

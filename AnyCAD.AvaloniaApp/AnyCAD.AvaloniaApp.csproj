@@ -22,5 +22,6 @@
   <ItemGroup>
     <ProjectReference Include="..\AnyCAD.Advanced\AnyCAD.Advanced.csproj" />
     <ProjectReference Include="..\AnyCAD.Basic\AnyCAD.Basic.csproj" />
+    <ProjectReference Include="..\AnyCAD.QuickSolid\AnyCAD.QuickSolid.csproj" />
   </ItemGroup>
 </Project>

@@ -38,7 +38,7 @@ namespace AnyCAD.WPF
         static public ObservableCollection<TreeViewItem> LoadAdv()
         {
             var loader = new TestCaseLoader();
-            TestCaseLoaderAdv.ForEachCase(loader.OnLoaded);
+            TestCaseLoaderSimulate.ForEachCase(loader.OnLoaded);
             return loader.rootNodes;
         }
 

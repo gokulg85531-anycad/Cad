@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace AnyCAD.Demo
 {
-    public class TestCaseLoaderAdv
+    public class TestCaseLoaderSimulate
     {
         public static void ForEachCase(AnyCAD.Demo.TestCase.TestCaseHandler handler)
         {

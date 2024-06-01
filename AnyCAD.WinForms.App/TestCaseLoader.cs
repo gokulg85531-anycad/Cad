@@ -14,7 +14,7 @@ namespace AnyCAD.Demo
             Register(node);
 
             node = tv.Nodes.Add("运动仿真");
-            RegisterAdv(node);
+            RegisterSimulate(node);
 
             node = tv.Nodes.Add("高级建模");
             RegisterQuick(node);
@@ -40,10 +40,10 @@ namespace AnyCAD.Demo
             tv.ExpandAll();
         }
 
-        static void RegisterAdv(TreeNode tv)
+        static void RegisterSimulate(TreeNode tv)
         {
             Dictionary<String, TreeNode> dictNodes = new Dictionary<string, TreeNode>();
-            TestCaseLoaderAdv.ForEachCase((Type type, string name, string groupName) =>
+            TestCaseLoaderSimulate.ForEachCase((Type type, string name, string groupName) =>
             {
                 TreeNode groupNode = null;
                 if (!dictNodes.TryGetValue(groupName, out groupNode))

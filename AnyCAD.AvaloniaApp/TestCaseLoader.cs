@@ -38,10 +38,16 @@ namespace AnyCAD.AvaloniaApp
             TestCaseLoaderBase.ForEachCase(loader.OnLoaded);
             return loader.rootNodes;
         }
-        static public ObservableCollection<TreeViewItem> LoadAdv()
+        static public ObservableCollection<TreeViewItem> LoadSimulate()
         {
             var loader = new TestCaseLoader();
-            TestCaseLoaderAdv.ForEachCase(loader.OnLoaded);
+            TestCaseLoaderSimulate.ForEachCase(loader.OnLoaded);
+            return loader.rootNodes;
+        }
+        static public ObservableCollection<TreeViewItem> LoadQuickSolid()
+        {
+            var loader = new TestCaseLoader();
+            TestCaseLoaderQuickSolid.ForEachCase(loader.OnLoaded);
             return loader.rootNodes;
         }
     }

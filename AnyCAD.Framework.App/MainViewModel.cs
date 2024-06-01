@@ -1,7 +1,6 @@
 ﻿using AnyCAD.Drawing;
 using AnyCAD.Foundation;
 using AnyCAD.NX.Command;
-using AnyCAD.NX.Controls;
 using AnyCAD.NX.Settings;
 using AnyCAD.NX.View;
 using AnyCAD.NX.ViewModel;
@@ -21,6 +20,9 @@ namespace AnyCAD.WPF
         ObservableCollection<TreeViewItem> _AdvSamples;
 
         [ObservableProperty]
+        ObservableCollection<TreeViewItem> _QuickSolidSamples;
+
+        [ObservableProperty]
         string _MousePosition = string.Empty;
 
         [ObservableProperty]
@@ -28,7 +30,8 @@ namespace AnyCAD.WPF
         public MainViewModel(IRenderView view):base(view)
         { 
             _BasicSamples = TestCaseLoader.LoadBasic();
-            _AdvSamples = TestCaseLoader.LoadAdv();
+            _AdvSamples = TestCaseLoader.LoadSimulate();
+            _QuickSolidSamples = TestCaseLoader.LoadQuickSolid();
             PropertyChanged += ViewModel_PropertyChanged;
         }
 

@@ -66,8 +66,12 @@
                     <TreeView Grid.Row="1" ItemsSource="{Binding BasicSamples}" SelectedItemChanged="Browser_SelectedItemChanged" Grid.Column="0" Margin="0,0,0,0">
                     </TreeView>
                 </TabItem>
-                <TabItem Header="高级功能">
+                <TabItem Header="运动仿真">
                     <TreeView ItemsSource="{Binding AdvSamples}" SelectedItemChanged="Browser_SelectedItemChanged" Grid.Column="0" Margin="0,0,0,0">
+                    </TreeView>
+                </TabItem>
+                <TabItem Header="高级建模">
+                    <TreeView ItemsSource="{Binding QuickSolidSamples;}" SelectedItemChanged="Browser_SelectedItemChanged" Grid.Column="0" Margin="0,0,0,0">
                     </TreeView>
                 </TabItem>
             </TabControl>
