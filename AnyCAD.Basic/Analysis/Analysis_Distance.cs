@@ -7,7 +7,7 @@ namespace AnyCAD.Demo.Geometry
         public override void Run(IRenderView renderer)
         {
             string fileName = GetResourcePath("Holes.stp");
-            var shape = StepIO.Open(fileName);
+            var shape = ShapeIO.Open(fileName);
             if (shape == null)
                 return;
             renderer.ShowSceneNode(BrepSceneNode.Create(shape, null, null, 0, true));

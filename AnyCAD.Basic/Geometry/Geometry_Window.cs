@@ -104,7 +104,8 @@ namespace AnyCAD.Demo.Geometry
 
             var dim = new AlignedDimensionNode(new Vector3(0, deep * 0.5f, 0), new Vector3(width, deep * 0.5f, 0),
                 -10, "100");
-            dim.SetAxisZ(new Vector3(0, -1, 0));
+            dim.SetCoordinate(new Vector3(0, -1, 0), new Vector3(1,0,0));
+            
             dim.Update();
             render.ShowSceneNode(dim);
         }

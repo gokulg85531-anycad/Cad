@@ -41,5 +41,12 @@ namespace AnyCAD.WPF
             TestCaseLoaderAdv.ForEachCase(loader.OnLoaded);
             return loader.rootNodes;
         }
+
+        static public ObservableCollection<TreeViewItem> LoadQuickSolid()
+        {
+            var loader = new TestCaseLoader();
+            TestCaseLoaderQuickSolid.ForEachCase(loader.OnLoaded);
+            return loader.rootNodes;
+        }
     }
 }

@@ -93,14 +93,15 @@ namespace AnyCAD.Demo
 
         private void MultiCoordinateSystemForm_Load(object sender, EventArgs e)
         {
-            mRenderCtrl.ViewContext.GetSceneManager().GetCoodinateGrid().SetVisible(true);
+            mRenderCtrl.ViewContext.GetSceneManager().GetCoordinateGrid().SetVisible(true);
             mPart = new MyPart();
             mPlane = new MyPlane();
 
             mPart.Show(mRenderCtrl);
             mPlane.Show(mRenderCtrl);
 
-            mRenderCtrl.Viewer.SetCoordinateWidget(EnumViewCoordinateType.Axis);
+            var settings = new CoordinateWidgetSetting(mRenderCtrl.Viewer);
+            settings.SetCoordinateWidget(EnumViewCoordinateType.Axis);
 
             mRenderCtrl.SetSelectCallback((PickedResult ret) =>
             {

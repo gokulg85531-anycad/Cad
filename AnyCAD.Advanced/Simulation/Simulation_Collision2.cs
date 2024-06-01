@@ -19,7 +19,7 @@ namespace AnyCAD.Demo.Graphics
             mMaterialWarning.SetColor(ColorTable.浅粉红);
             mMaterialWarning.SetFaceSide(EnumFaceSide.DoubleSide);
 
-            _CollisionWorld = new CollisionWorld();
+            _CollisionWorld = CollisionWorld.Create("Default");
 
             var fileName = GetResourcePath("JMS.step");
             var shape1 = ShapeIO.Open(fileName);
@@ -41,7 +41,7 @@ namespace AnyCAD.Demo.Graphics
 
             render.ShowSceneNode(mObject1);
             render.ShowSceneNode(mObject2);
-
+            _CollisionWorld.AddObject(mObject2);
             render.EnableAnimation(true);
         }
 
@@ -54,12 +54,11 @@ namespace AnyCAD.Demo.Graphics
         float mStep = -5;
         public override void Animation(IRenderView render, float time)
         {
-            var collision = new NodeCollisionDetector(mObject2, _CollisionWorld);
 
             for (var itr = mObject1.CreateIterator(); itr.More(); itr.Next())
             {
                 var current = BrepSceneNode.Cast(itr.Current());
-                if (collision.Test(current))
+                if (_CollisionWorld.Collide(current, mObject2))
                 {
                     current.SetFaceMaterial(mMaterialWarning);
                 }
@@ -81,7 +80,7 @@ namespace AnyCAD.Demo.Graphics
             mDistance += mStep;
             mObject2.AddTransform(Matrix4.makeTranslation(mStep, mStep, 0));
             mObject2.RequestUpdate();
-
+            _CollisionWorld.UpdateTransform(mObject2, mObject2.GetTransform().ToMatrix4d());
             render.RequestDraw(EnumUpdateFlags.Scene);
         }
     }

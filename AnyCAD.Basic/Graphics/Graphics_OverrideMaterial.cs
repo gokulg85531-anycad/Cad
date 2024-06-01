@@ -9,14 +9,18 @@ namespace AnyCAD.Demo.Graphics
     {
         public override void Run(IRenderView render)
         {
-            var stl = new STLReader();          
+       
             var face = MeshPhongMaterial.Create("stl");
             face.SetColor(ColorTable.LightYellow);
             face.SetOpacity(0.8f);
             face.SetDepthTest(false);
             face.SetTransparent(true);
 
-            var node = stl.Load(GetResourcePath("stl/1234.stl"), false, face);
+            var node = SceneIO.Load(GetResourcePath("stl/1234.stl"));
+            if(node == null)
+                return;
+
+            node.SetOverrideFaceMaterial(face);
             render.ShowSceneNode(node);
         }
     }

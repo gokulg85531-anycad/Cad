@@ -8,7 +8,7 @@ namespace AnyCAD.Demo.Geometry
         public override void Run(IRenderView render)
         {
             string fileName = GetResourcePath("models/hole.STEP");
-            var shape = StepIO.Open(fileName);
+            var shape = ShapeIO.Open(fileName);
             if (shape == null)
                 return;
 

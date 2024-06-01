@@ -1,6 +1,6 @@
 # AnyCAD Rapid .NET Sample
 
-本代码仓库包含包含基础功能和高级功能的演示。其中，
+本代码仓库包含包含基础功能、运动仿真和高级建模的演示。
 
 ## 0 整体说明
 
@@ -14,8 +14,8 @@
 
 ### 0.2 功能实现
 - 基础功能：位于AnyCAD.Basic工程中
-- 高级功能：位于AnyCAD.Advanced工程中。
-
+- 运动仿真：位于AnyCAD.Advanced工程中。
+- 高级建模：位于AnyCAD.QuickSolid工程中
 
 ### 0.3 分支说明:
  - R2022: 2022 branch

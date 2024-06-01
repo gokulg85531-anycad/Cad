@@ -10,24 +10,11 @@ namespace AnyCAD.Demo.Geometry
             if (fileName.IsEmpty())
                 return;
 
-           var shapes = DxfIO.Load(fileName.GetString());
-           var wires = CurveBuilder.ConnectEdgesToWires(shapes, 0.01, false);
-
-            WireTreeBuilder wtb = new WireTreeBuilder();
-
-            for(int i = 0; i<4 && i< wires.Count;  i++) 
+           var shapes = ShapeIO.Open(fileName.GetString());
+           foreach(var edge in shapes.GetChildren(EnumTopoShapeType.Topo_EDGE))
             {
- 
-                wtb.AddWire(wires[i]);
-            }
-            wtb.Build();
-            wtb.Normalize();
+                render.ShowShape(edge, ColorTable.Red);
 
-            var count = wtb.GetCount();
-            for(uint ii=0; ii<count; ii++)
-            {
-               var wouter =  wtb.GetItem(ii);
-                render.ShowShape(wouter, ColorTable.Red);
             }
         }
     }

@@ -1,8 +1,4 @@
-﻿using AnyCAD.Foundation;
-using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Windows.Forms;
+﻿using System.Reflection;
 
 namespace AnyCAD.Demo
 {
@@ -17,8 +13,11 @@ namespace AnyCAD.Demo
             node = tv.Nodes.Add("基础功能");
             Register(node);
 
-            node = tv.Nodes.Add("高级功能");
+            node = tv.Nodes.Add("运动仿真");
             RegisterAdv(node);
+
+            node = tv.Nodes.Add("高级建模");
+            RegisterQuick(node);
         }
 
 
@@ -45,6 +44,25 @@ namespace AnyCAD.Demo
         {
             Dictionary<String, TreeNode> dictNodes = new Dictionary<string, TreeNode>();
             TestCaseLoaderAdv.ForEachCase((Type type, string name, string groupName) =>
+            {
+                TreeNode groupNode = null;
+                if (!dictNodes.TryGetValue(groupName, out groupNode))
+                {
+                    groupNode = tv.Nodes.Add(GetUIName(groupName));
+                    dictNodes[groupName] = groupNode;
+                }
+
+                var node = groupNode.Nodes.Add(name);
+                node.Tag = type;
+            });
+
+            tv.ExpandAll();
+        }
+
+        static void RegisterQuick(TreeNode tv)
+        {
+            Dictionary<String, TreeNode> dictNodes = new Dictionary<string, TreeNode>();
+            TestCaseLoaderQuickSolid.ForEachCase((Type type, string name, string groupName) =>
             {
                 TreeNode groupNode = null;
                 if (!dictNodes.TryGetValue(groupName, out groupNode))

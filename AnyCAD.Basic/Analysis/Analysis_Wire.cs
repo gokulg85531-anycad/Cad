@@ -7,7 +7,7 @@ namespace AnyCAD.Demo.Geometry
     {
         public override void Run(IRenderView renderer)
         {
-            var wire = BrepIO.Open(GetResourcePath("models/wire.brep"));
+            var wire = ShapeIO.Open(GetResourcePath("models/wire.brep"));
             if (wire == null)
                 return;
 

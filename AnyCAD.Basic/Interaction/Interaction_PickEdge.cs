@@ -8,7 +8,7 @@ namespace AnyCAD.Demo.Graphics
         public override void Run(IRenderView render)
         {
             string fileName = GetResourcePath("ST038.stp");
-            var shape = StepIO.Open(fileName);
+            var shape = ShapeIO.Open(fileName);
             if (shape == null)
                 return;
 

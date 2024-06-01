@@ -9,6 +9,7 @@ namespace AnyCAD.Demo
     public partial class MainForm : Form
     {
         RenderControl mRenderView;
+        LineDashedMaterial mLineDashedMaterial;
 
         public MainForm()
         {
@@ -17,6 +18,8 @@ namespace AnyCAD.Demo
             mRenderView = new RenderControl(this.splitContainer1.Panel2);
             TestCaseLoader.Register(this.treeView1);
 
+            mLineDashedMaterial = LineDashedMaterial.Create("xyz");
+            mLineDashedMaterial.SetColor(ColorTable.Red);
         }
 
         bool mEnableAnimation = true;
@@ -48,10 +51,22 @@ namespace AnyCAD.Demo
                 this.listBox1.Items.Add(string.Format("PrimitiveIndex: {0}", item.GetPoint().GetPrimitiveIndex()));
                 this.listBox1.Items.Add(string.Format("TopoShapeId: {0}", item.GetTopoShapeId()));
 
+                //for(var itr = result.CreateIterator();itr.More(); itr.Next())
+                //{
+                //    var item2  = itr.Current();
+                //    var nodex = BrepSceneNode.Cast(item2.GetNode());
+                //    if(nodex != null)
+                //    {
+                //        nodex.SetEdgeMaterialByAll(mLineDashedMaterial);
+                //        mRenderView.RequestDraw();
+                //    }
+                   
+                //}
+
                 // 获取圆弧信息的例子
                 var node = BrepSceneNode.Cast(item.GetNode());
                 if (node != null)
-                {
+                {                    
                     var shape = node.GetTopoShape();
 
                     if (item.GetShapeType() == EnumShapeFilter.Edge)

@@ -15,6 +15,8 @@ namespace AnyCAD.WPF
 
         [ObservableProperty]
         ObservableCollection<TreeViewItem> _AdvSamples;
+        [ObservableProperty]
+        ObservableCollection<TreeViewItem> _QuickSolidSamples;
 
         [ObservableProperty]
         string _MousePosition = string.Empty;
@@ -26,6 +28,7 @@ namespace AnyCAD.WPF
             mRenderView = view;
             _BasicSamples = TestCaseLoader.LoadBasic();
             _AdvSamples = TestCaseLoader.LoadAdv();
+            _QuickSolidSamples = TestCaseLoader.LoadQuickSolid();
         }
 
         public void ViewReady()

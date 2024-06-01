@@ -10,7 +10,7 @@ namespace AnyCAD.Demo.Geometry
             var tube = AdvShapeBuilder.MakeTube(new GAx2(), 8, 1, 100);
 
             // 矩形管
-            var rectTube = AdvShapeBuilder.MakeRectTube(new GAx2(new GPnt(40, 0, 0), new GDir(0, 0, 1)), 15, 20, 2, 2, 100);
+            var rectTube = AdvShapeBuilder.MakeRectTube(new GAx2(new GPnt(40, 0, 0), new GDir(0, 0, 1)), 15, 20, 2, 2, 2, 100);
 
             // 实心
             var rectSolid = AdvShapeBuilder.MakeRectSolid(new GAx2(new GPnt(40, 40, 0), new GDir(0, 0, 1)), 15, 20, 2, 100);

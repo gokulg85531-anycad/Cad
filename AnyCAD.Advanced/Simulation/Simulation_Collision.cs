@@ -12,7 +12,7 @@ namespace AnyCAD.Demo.Graphics
         CollisionWorld _CollisionWorld;
         public override void Run(IRenderView render)
         {
-            _CollisionWorld = new CollisionWorld();
+            _CollisionWorld = CollisionWorld.Create("Default");
 
             mMaterial = MeshPhongMaterial.Create("face");
             mMaterial.SetColor(ColorTable.查特酒绿);
@@ -38,6 +38,9 @@ namespace AnyCAD.Demo.Graphics
             render.ShowSceneNode(mObject1);
             render.ShowSceneNode(mObject2);
 
+            _CollisionWorld.AddObject(mObject1);
+            _CollisionWorld.AddObject(mObject2);
+
             render.EnableAnimation(true);
         }
 
@@ -50,8 +53,7 @@ namespace AnyCAD.Demo.Graphics
         float mStep = -1;
         public override void Animation(IRenderView render, float time)
         {
-            var collision = new NodeCollisionDetector(mObject1, _CollisionWorld);
-            if(collision.Test(mObject2))
+            if(_CollisionWorld.Collide(mObject2, mObject1))
             {
                 mObject1.SetFaceMaterial(mMaterialWarning);
                 mObject2.SetFaceMaterial(mMaterialWarning2);
@@ -72,7 +74,7 @@ namespace AnyCAD.Demo.Graphics
             mDistance += mStep;
             mObject1.AddTransform(Matrix4.makeTranslation(mStep, mStep, 0));
             mObject1.RequestUpdate();
-
+            _CollisionWorld.UpdateTransform(mObject1, mObject1.GetTransform().ToMatrix4d());
             render.RequestDraw(EnumUpdateFlags.Scene);
         }
      }
