@@ -6,10 +6,10 @@ namespace AnyCAD.Demo.Graphics
     {
         public override void Run(IRenderView render)
         {
-            var pos = new Vector3(1);
+            var pos = new Vector3d(1);
             var pt = GeometryBuilder.CreatePoint(new Vector3(1));
             var node = PrimitiveSceneNode.Create(pt, null);
-            node.SetBoundingBox(new AABox(pos - new Vector3(10), pos + new Vector3(10)));
+            node.SetBoundingBox(new AABox(pos - new Vector3d(10), pos + new Vector3d(10)));
             render.ShowSceneNode(node);
 
             var pt2 = GeometryBuilder.CreatePoint(new Vector3(100, 1000, 0));

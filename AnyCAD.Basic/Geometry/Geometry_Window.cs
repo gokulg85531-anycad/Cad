@@ -70,7 +70,7 @@ namespace AnyCAD.Demo.Geometry
             float scale = 0.015f;
             textNode.SetTransform(Matrix4.makeRotationAxis(Vector3.UNIT_X, 3.14159f * 0.5f) *Matrix4.makeScale(scale, scale, 1));
             textNode.ComputeBoundingBox(Matrix4.Identity);
-            float halfW = textNode.GetWorldBBox().getHalfSize().x;
+            float halfW = (float)textNode.GetWorldBBox().getHalfSize().x;
             var dist = end.distanceTo(start);
             float ratio = (dist * 0.5f - halfW) / dist;
             textNode.SetTransform(Matrix4.makeTranslation((start + end) * ratio + offset) * textNode.GetTransform());

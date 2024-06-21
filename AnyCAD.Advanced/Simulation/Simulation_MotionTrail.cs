@@ -34,8 +34,8 @@ namespace AnyCAD.Demo.Graphics
             var rotation = Matrix4.makeRotationAxis(new Vector3(1, 0, 0), (float)Math.PI);
             var trf = Matrix4.makeTranslation(-50, 0, 0) * rotation;
 
-            mAnimation.Add(new MatrixAnimationClip(mWorkpiece, mWorkpiece.GetTransform(), trf, 0, 10));
-            mAnimation.Add(new MatrixAnimationClip(toolNode, toolNode.GetTransform(), trf, 10, 15));
+            mAnimation.Add(new MatrixAnimationClip(mWorkpiece, mWorkpiece.GetTransformF(), trf, 0, 10));
+            mAnimation.Add(new MatrixAnimationClip(toolNode, toolNode.GetTransformF(), trf, 10, 15));
             mAnimation.Add(new RotateAnimationClip(toolNode, Vector3.UNIT_Z, (float)Math.PI*4, 16, 20));
 
             render.EnableAnimation(true);
@@ -60,7 +60,7 @@ namespace AnyCAD.Demo.Graphics
             {
                 var trf = mWorkpiece.GetTransform();
                 Vector3 tailPostion = new Vector3(0, 0, 5);
-                tailPostion.applyMatrix4(trf);
+                tailPostion.applyMatrix4d(trf);
                 mMotionTrail.SetPosition(mCount++, tailPostion);
                 mMotionTrail.RequestUpdate();
 

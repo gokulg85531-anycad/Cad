@@ -39,13 +39,13 @@ namespace AnyCAD.Demo.Geometry
                     }
                     else
                     {
-                        x += sz.x;
+                        x += (float)sz.x;
                     }
 
                     if(ii < halfCount)
                     {
 
-                        maxY = System.Math.Max(maxY, sz.y);
+                        maxY = System.Math.Max(maxY, (float)sz.y);
                     }
                     ++ii;
                 }

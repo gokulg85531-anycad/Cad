@@ -39,7 +39,7 @@ namespace AnyCAD.Demo.Graphics
 
             //在中间砍一刀
             var box = node.GetBoundingBox();
-            var mid = (box.getMaximum().z + box.getMinimum().z)/2;
+            var mid = (float)(box.getMaximum().z + box.getMinimum().z)/2;
             var size = box.getSize();
             var section = MeshTool.ComputeSection(geom, mid, 0.001f, 2.0f);
             if (section == null)

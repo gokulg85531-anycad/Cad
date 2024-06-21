@@ -80,7 +80,7 @@ namespace AnyCAD.Demo.Graphics
             mDistance += mStep;
             mObject2.AddTransform(Matrix4.makeTranslation(mStep, mStep, 0));
             mObject2.RequestUpdate();
-            _CollisionWorld.UpdateTransform(mObject2, mObject2.GetTransform().ToMatrix4d());
+            _CollisionWorld.UpdateTransform(mObject2, mObject2.GetTransform());
             render.RequestDraw(EnumUpdateFlags.Scene);
         }
     }
