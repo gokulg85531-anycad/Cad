@@ -227,7 +227,7 @@ namespace AnyCAD.WPF
         [RelayCommand]
         void OnPickEdge()
         {
-            Viewer.GetContext().SetPickFilter((uint)EnumShapeFilter.Edge);
+            Viewer.GetContext().SetPickFilter(EnumShapeFilter.Edge);
         }
 
         ConfirmInputView? _ConfirmInputView = null;

@@ -192,7 +192,7 @@ namespace AnyCAD.WPF
         [RelayCommand]
         void OnPickEdge()
         {
-            mRenderView.ViewContext.SetPickFilter((uint)EnumShapeFilter.Edge);
+            mRenderView.ViewContext.SetPickFilter(EnumShapeFilter.Edge);
         }
     }
 }

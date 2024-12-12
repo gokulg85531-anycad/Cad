@@ -5,7 +5,7 @@ namespace AnyCAD.Demo.Graphics
     class Interaction_PickFace : TestCase
     {
         ArrowWidget mArrow;
-        uint _PickFilter = 0;
+        EnumShapeFilter _PickFilter = 0;
         public override void Run(IRenderView render)
         {
             var arrowMaterial = MeshPhongMaterial.Create("arrow");
@@ -23,7 +23,7 @@ namespace AnyCAD.Demo.Graphics
             render.ShowSceneNode(node);
 
             _PickFilter = render.ViewContext.GetPickFilter();
-            render.ViewContext.SetPickFilter((uint)EnumShapeFilter.Face);
+            render.ViewContext.SetPickFilter(EnumShapeFilter.Face);
         }
 
 

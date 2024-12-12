@@ -4,7 +4,7 @@ namespace AnyCAD.Demo.Graphics
 {
     class Interaction_PickEdge : TestCase
     {
-        uint _PickFilter = 0;
+        EnumShapeFilter _PickFilter = 0;
         public override void Run(IRenderView render)
         {
             string fileName = GetResourcePath("ST038.stp");
@@ -21,7 +21,7 @@ namespace AnyCAD.Demo.Graphics
             render.ShowSceneNode(node);
 
             _PickFilter = render.ViewContext.GetPickFilter();
-            render.ViewContext.SetPickFilter((uint)EnumShapeFilter.Edge);
+            render.ViewContext.SetPickFilter(EnumShapeFilter.Edge);
         }
 
 
