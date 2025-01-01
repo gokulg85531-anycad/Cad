@@ -9,10 +9,10 @@ namespace AnyCAD.Demo.Graphics
         MaterialInstance mMaterial;
         MaterialInstance mMaterialWarning;
         MaterialInstance mMaterialWarning2;
-        CollisionWorld _CollisionWorld;
+        CollisionSceneWorld _CollisionWorld;
         public override void Run(IRenderView render)
         {
-            _CollisionWorld = CollisionWorld.Create("Default");
+            _CollisionWorld = CollisionSceneWorld.Create("Default");
 
             mMaterial = MeshPhongMaterial.Create("face");
             mMaterial.SetColor(ColorTable.查特酒绿);
@@ -30,7 +30,7 @@ namespace AnyCAD.Demo.Graphics
 
             var shape1 = ShapeBuilder.MakeCone(GP.XOY(), 10, 5, 10, System.Math.PI/2);
             mObject1 = BrepSceneNode.Create(shape1, null, null);
-            mObject1.SetTransform(Matrix4.makeTranslation(100, 100, 0));
+            mObject1.SetTransform(Matrix4d.makeTranslation(100, 100, 0));
 
             var shape2 = ShapeBuilder.MakeCylinder(GP.XOY(), 20, 20, 0);
             mObject2 = BrepSceneNode.Create(shape2, null, null);

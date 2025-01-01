@@ -26,13 +26,13 @@ namespace AnyCAD.Demo.Geometry
             edgeMaterial.SetColor(ColorTable.Wheat);
 
             // 显示
-            render.ShowSceneNode(BrepSceneNode.Create(tube, MaterialStore.Chrome, edgeMaterial));
-            
-            render.ShowSceneNode(BrepSceneNode.Create(rectTube, MaterialStore.Copper, edgeMaterial));
-            render.ShowSceneNode(BrepSceneNode.Create(rectSolid, MaterialStore.Brass, edgeMaterial));
+            //render.ShowSceneNode(BrepSceneNode.Create(tube, MaterialStore.Chrome, edgeMaterial));
+
+            //render.ShowSceneNode(BrepSceneNode.Create(rectTube, MaterialStore.Copper, edgeMaterial));
+            //render.ShowSceneNode(BrepSceneNode.Create(rectSolid, MaterialStore.Brass, edgeMaterial));
 
             render.ShowSceneNode(BrepSceneNode.Create(waistTube, MaterialStore.YellowPlastic, edgeMaterial));
-            render.ShowSceneNode(BrepSceneNode.Create(waistSolid, MaterialStore.YellowRubber, edgeMaterial));
+            //render.ShowSceneNode(BrepSceneNode.Create(waistSolid, MaterialStore.YellowRubber, edgeMaterial));
         }
     }
 }

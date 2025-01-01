@@ -8,7 +8,7 @@ namespace AnyCAD.Demo.Graphics
         BrepSceneNode mObject2;
         MaterialInstance mMaterial;
         MaterialInstance mMaterialWarning;
-        CollisionWorld _CollisionWorld;
+        CollisionSceneWorld _CollisionWorld;
         public override void Run(IRenderView render)
         {
             mMaterial = MeshPhongMaterial.Create("face");
@@ -19,12 +19,12 @@ namespace AnyCAD.Demo.Graphics
             mMaterialWarning.SetColor(ColorTable.浅粉红);
             mMaterialWarning.SetFaceSide(EnumFaceSide.DoubleSide);
 
-            _CollisionWorld = CollisionWorld.Create("Default");
+            _CollisionWorld = CollisionSceneWorld.Create("Default");
 
             var fileName = GetResourcePath("JMS.step");
             var shape1 = ShapeIO.Open(fileName);
 
-            var rot = Matrix4.makeRotationAxis(Vector3.UNIT_X, (float)System.Math.PI / 2);
+            var rot = Matrix4d.makeRotationAxis(Vector3d.UNIT_X, System.Math.PI / 2);
 
             var solids = shape1.GetChildren(EnumTopoShapeType.Topo_SOLID);
             mObject1 = new GroupSceneNode();
@@ -37,7 +37,7 @@ namespace AnyCAD.Demo.Graphics
 
             var shape2 = ShapeBuilder.MakeCylinder(GP.XOY(), 20, 200, 0);
             mObject2 = BrepSceneNode.Create(shape2, null, null, 1, true);
-            mObject2.SetTransform(Matrix4.makeTranslation(-400, -500, 0));
+            mObject2.SetTransform(Matrix4d.makeTranslation(-400, -500, 0));
 
             render.ShowSceneNode(mObject1);
             render.ShowSceneNode(mObject2);
