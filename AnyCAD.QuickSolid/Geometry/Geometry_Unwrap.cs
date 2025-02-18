@@ -21,12 +21,12 @@ namespace AnyCAD.Demo.Geometry
             float maxY = 0;
             foreach ( var face in faceList )
             {
-                var wires = ShapeAnalysisTool.Unwrap(face);
+                var wires = AdvFeatureTool.Unwrap(face);
                 var plane = SketchBuilder.MakePolygonFace(wires);
                 if(plane != null)
                 {
                     var node = render.ShowShape(plane, ColorTable.GreenYellow);
-                    node.SetTransform(Matrix4.makeTranslation(x, y, 0));
+                    node.SetTransform(Matrix4d.makeTranslation(x, y, 0));
                     node.RequestUpdate();
 
                     var bbox = node.GetBoundingBox();
