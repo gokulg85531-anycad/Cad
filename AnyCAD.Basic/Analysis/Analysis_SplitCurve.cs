@@ -33,7 +33,7 @@ namespace AnyCAD.Demo.Analysis
                 renderer.ShowShape(edge, ColorTable.Azure);
 
 
-                node2.SetTransform(Matrix4.makeScale(0.5f, 0.5f, 0.5f));
+                node2.SetTransform(Matrix4d.makeScale(0.5f, 0.5f, 0.5f));
                 node2.RequestUpdate();
                 renderer.ShowSceneNode(node2);
             }

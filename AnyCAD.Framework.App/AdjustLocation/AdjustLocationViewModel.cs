@@ -71,7 +71,7 @@ namespace AnyCAD.WPF.AdjustLocation
             }
 
             var vec = new GVec(_SourcePoint, _TargetPoint);
-            var trf = Matrix4.makeTranslation(Vector3.From(vec));
+            var trf = Matrix4d.makeTranslation(Vector3d.From(vec));
 
             _SourceObject.SetTransform(trf);
             _SourceObject.RequestUpdate();

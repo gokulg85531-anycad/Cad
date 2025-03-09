@@ -82,7 +82,7 @@ namespace AnyCAD.Demo.Graphics
 
             Vector3 target = mPoints[mCurrentIdx];
 
-            mLineNode.SetTransform(MakeTransform(mStart, target));
+            mLineNode.SetTransform(MakeTransform(mStart, target).ToMatrix4d());
             mLineNode.RequestUpdate();
 
             mMotionTrail.SetPosition((uint)mCurrentIdx, target);
@@ -116,7 +116,7 @@ namespace AnyCAD.Demo.Graphics
 
             var plane = GeometryBuilder.CreatePlane(500, 500);
             var planeNode = new PrimitiveSceneNode(plane, mMaterial1);
-            planeNode.SetTransform(Matrix4.makeTranslation(new Vector3(0, 0, -2.5f)));
+            planeNode.SetTransform(Matrix4d.makeTranslation(new Vector3d(0, 0, -2.5f)));
             planeNode.SetPickable(false);
 
             render.ShowSceneNode(planeNode);

@@ -21,7 +21,7 @@ namespace AnyCAD.Demo.Geometry
                     var dir = d1.GetVectors()[0];
                     var trf = new GAx2(d1.GetPoint(), new GDir(0, 0, 1), new GDir(dir));
                     var ax = AxWidget.Create(new Vector3(20), 1);
-                    ax.SetTransform(Matrix4.From(trf.ToTrsf()));
+                    ax.SetTransform(Matrix4d.From(trf.ToTrsf()));
 
                     render.ShowSceneNode(ax);
                 }

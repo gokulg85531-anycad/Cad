@@ -17,11 +17,11 @@ namespace AnyCAD.Demo.Graphics
                 int x = (int)i;
                 if(x < 5)
                 {
-                    node.SetTransform(Matrix4.makeTranslate(x + 1, 1, 0));
+                    node.SetTransform(Matrix4d.makeTranslate(x + 1, 1, 0));
                 }
                 else
                 {
-                    node.SetTransform(Matrix4.makeTranslate(x + 1 - 5, 2, 0));
+                    node.SetTransform(Matrix4d.makeTranslate(x + 1 - 5, 2, 0));
                 }
 
 

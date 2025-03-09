@@ -21,7 +21,7 @@ namespace AnyCAD.Demo.Geometry
                     var edges = builder.GetVisibleOutlines();
                     var group = ShapeBuilder.MakeCompound(edges);
                     var node = render.ShowShape(group, ColorTable.LightGreen);
-                    var trf = TransformTool.ToMatrix4(ax);
+                    var trf = TransformTool.ToMatrix4d(ax);
                     node.SetTransform(trf);
                 }
             }
@@ -32,7 +32,7 @@ namespace AnyCAD.Demo.Geometry
                     var edges = builder.GetVisibleOutlines();
                     var group = ShapeBuilder.MakeCompound(edges);
                     var node = render.ShowShape(group, ColorTable.LightPink);
-                    var trf = TransformTool.ToMatrix4(ax);
+                    var trf = TransformTool.ToMatrix4d(ax);
                     node.SetTransform(trf);
                 }
             }
@@ -43,7 +43,7 @@ namespace AnyCAD.Demo.Geometry
                     var edges = builder.GetVisibleOutlines();
                     var group = ShapeBuilder.MakeCompound(edges);
                     var node = render.ShowShape(group, ColorTable.GreenYellow);
-                    var trf = TransformTool.ToMatrix4(ax);
+                    var trf = TransformTool.ToMatrix4d(ax);
                     node.SetTransform(trf);
                 }
             }

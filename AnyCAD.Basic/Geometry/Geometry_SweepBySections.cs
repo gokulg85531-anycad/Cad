@@ -31,7 +31,7 @@ class Geometry_SweepBySections : TestCase
         var shape = FeatureTool.SweepByFrenet(sketch, path, mode, true);
 
         var node = render.ShowShape(shape, color);
-        node.SetTransform(Matrix4.makeTranslation(offset, 0, 0));
+        node.SetTransform(Matrix4d.makeTranslation(offset, 0, 0));
         node.RequestUpdate();
     }
 

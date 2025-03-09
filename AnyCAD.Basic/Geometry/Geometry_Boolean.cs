@@ -14,23 +14,23 @@ namespace AnyCAD.Demo.Geometry
 
             var common = BooleanTool.Common(box, sphere);
             var node = render.ShowShape(common, ColorTable.Green);
-            node.SetTransform(Matrix4.makeTranslation(-20, 0, 0));
+            node.SetTransform(Matrix4d.makeTranslation(-20, 0, 0));
             node.RequestUpdate();
 
             var cut = BooleanTool.Cut(box, sphere);
             node = render.ShowShape(cut, ColorTable.Honeydew);
-            node.SetTransform(Matrix4.makeTranslation(0, 20, 0));
+            node.SetTransform(Matrix4d.makeTranslation(0, 20, 0));
             node.RequestUpdate();
 
             var cut2 = BooleanTool.Cut(sphere, box);
             node = render.ShowShape(cut2, ColorTable.Violet);
-            node.SetTransform(Matrix4.makeTranslation(0, -20, 0));
+            node.SetTransform(Matrix4d.makeTranslation(0, -20, 0));
             node.RequestUpdate();
 
             var fuse = BooleanTool.Fuse(box, sphere);
             fuse = BooleanTool.Unify(fuse, true, true, true);
             node = render.ShowShape(fuse, ColorTable.LightYellow);
-            node.SetTransform(Matrix4.makeTranslation(20, 0, 0));
+            node.SetTransform(Matrix4d.makeTranslation(20, 0, 0));
             node.RequestUpdate();
         }
     }

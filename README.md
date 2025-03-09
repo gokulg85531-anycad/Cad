@@ -18,9 +18,10 @@
 - 高级建模：位于AnyCAD.QuickSolid工程中
 
 ### 0.3 分支说明:
- - R2022: 2022 branch
- - R2023: 2023 branch
- - R2024: master
+ - R2022: 2022分支
+ - R2023: 2023分支
+ - R2024: 2024分支
+ - R2025: master
 
 ## 1 环境准备
 
@@ -53,17 +54,16 @@ dotnet msbuild AnyCAD.Rapid.Avalonia.sln
 - 布尔运算
 ![pCY0cMq.md.png](https://s1.ax1x.com/2023/06/23/pCY0cMq.md.png)
 
-- 特征识别
-![pCY0rGj.md.png](https://s1.ax1x.com/2023/06/23/pCY0rGj.md.png)
-
 - 几何造型
 
 ![pCY0hoF.md.png](https://s1.ax1x.com/2023/06/23/pCY0hoF.md.png)
 
 ![pCY0IJJ.md.png](https://s1.ax1x.com/2023/06/23/pCY0IJJ.md.png)
 
+### 2.2 特征识别
+![pCY0rGj.md.png](https://s1.ax1x.com/2023/06/23/pCY0rGj.md.png)
 
-### 2.2 显示
+### 2.3 显示
 ![pCY0XdO.md.png](https://s1.ax1x.com/2023/06/23/pCY0XdO.md.png)
 
 ![pCY0sRs.md.png](https://s1.ax1x.com/2023/06/23/pCY0sRs.md.png)
@@ -71,12 +71,11 @@ dotnet msbuild AnyCAD.Rapid.Avalonia.sln
 ![pCY0bsx.md.png](https://s1.ax1x.com/2023/06/23/pCY0bsx.md.png)
 
 
-
-### 2.3 交互
+### 2.4 交互
 
 ![pCY0fdU.md.png](https://s1.ax1x.com/2023/06/23/pCY0fdU.md.png)
 
-### 2.4 跨平台Linux
+### 2.5 跨平台Linux
 
 ![linux.loft](showcase/linux.loft.png)
 ![linux.loft](showcase/linux.pyramid.png)

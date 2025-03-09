@@ -13,7 +13,7 @@ namespace AnyCAD.Demo.Geometry
             foreach(var edge in edges)
             {
                 var node = render.ShowShape(edge, ColorTable.Green);
-                node.SetTransform(Matrix4.makeTranslate(0, 0, 1));
+                node.SetTransform(Matrix4d.makeTranslate(0, 0, 1));
 
                 var simpleCurve = AdvCurveBuilder.SplineToArcs(edge, 0.1);
                 foreach (var curve in simpleCurve)

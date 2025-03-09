@@ -7,7 +7,7 @@ namespace AnyCAD.Basic.Geometry
 {
     internal class Geometry_BooleanCut : TestCase
     {
-        private TopoShape? CreateDiaphragm(IRenderView vewer, GPntList outPoints, List<int> arcBoolListOut, GPntList? innerPoints, List<int>? arcBoolListInner)
+        private TopoShape CreateDiaphragm(IRenderView vewer, GPntList outPoints, List<int> arcBoolListOut, GPntList innerPoints, List<int> arcBoolListInner)
         {
 
             //outPoints.Reverse();

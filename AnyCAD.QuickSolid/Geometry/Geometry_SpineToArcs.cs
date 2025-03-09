@@ -23,7 +23,7 @@ namespace AnyCAD.Demo.Geometry
                     }
 
                     var node = render.ShowShape(edge, ColorTable.Green);
-                    node.SetTransform(Matrix4.makeTranslate(0,0,1));
+                    node.SetTransform(Matrix4d.makeTranslate(0,0,1));
                 }
             }
         }

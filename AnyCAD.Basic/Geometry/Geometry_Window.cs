@@ -68,8 +68,8 @@ namespace AnyCAD.Demo.Geometry
             var textNode = new PrimitiveSceneNode(mesh, null);
 
             float scale = 0.015f;
-            textNode.SetTransform(Matrix4.makeRotationAxis(Vector3.UNIT_X, 3.14159f * 0.5f) *Matrix4.makeScale(scale, scale, 1));
-            textNode.ComputeBoundingBox(Matrix4.Identity);
+            textNode.SetTransform(Matrix4d.makeRotationAxis(Vector3d.UNIT_X, 3.14159f * 0.5f) *Matrix4d.makeScale(scale, scale, 1));
+            textNode.ComputeBoundingBox(Matrix4d.Identity);
             float halfW = (float)textNode.GetWorldBBox().getHalfSize().x;
             var dist = end.distanceTo(start);
             float ratio = (dist * 0.5f - halfW) / dist;

@@ -395,7 +395,7 @@ namespace AnyCAD.Demo
         {
             mContactShadow = !mContactShadow;
 
-            var settings = mRenderView.ViewContext.GetRenderSettings();
+            var settings = mRenderView.Viewer.GetRenderSettings();
             //settings.SetShadowMapEnabled(mContactShadow);
             settings.SetContactShadow(mContactShadow);
             settings.SetContactShadowBlur(5.0f);

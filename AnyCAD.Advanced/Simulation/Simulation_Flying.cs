@@ -9,26 +9,26 @@ namespace AnyCAD.Demo.Graphics
         public SceneNode mNode;
         public List<Vector3> mBasePoints;
         public List<Vector3> mCurrentPoints = new List<Vector3>();
-        public Vector3 mPosition;
+        public Vector3d mPosition;
 
         public DeviceObject()
         {
 
         }
 
-        public void Create(GRepShape shape, Vector3 position, List<Vector3> points)
+        public void Create(GRepShape shape, Vector3d position, List<Vector3> points)
         {
             mPosition = position;
             mBasePoints = points;
 
             mNode = new BrepSceneNode(shape);
-            mNode.SetTransform(Matrix4.makeTranslation(mPosition));
+            mNode.SetTransform(Matrix4d.makeTranslation(mPosition));
             mNode.RequestUpdate();
         }
 
-        public void Transform(Matrix4 trf)
+        public void Transform(Matrix4d trf)
         {
-            var globalTrf = Matrix4.makeTranslation(mPosition) * trf;
+            var globalTrf = Matrix4d.makeTranslation(mPosition) * trf;
             mNode.SetTransform(globalTrf);
             mNode.RequestUpdate();
 
@@ -81,11 +81,11 @@ namespace AnyCAD.Demo.Graphics
             bs.Build();
 
             int nCount = 20;
-            List<Vector3> positions = new List<Vector3>();
+            var positions = new List<Vector3d>();
             double step = Math.PI * 2 / nCount;
             for (int ii = 0; ii < nCount; ++ii)
             {
-                Vector3 pt = new Vector3((float)(radius * Math.Cos(ii * step)),
+                Vector3d pt = new Vector3d((float)(radius * Math.Cos(ii * step)),
                     (float)(radius * Math.Sin(ii * step)), 0);
                 positions.Add(pt);
 
@@ -134,14 +134,14 @@ namespace AnyCAD.Demo.Graphics
 
             var rotateX = Matrix4.makeRotationAxis(axis, mAngle);
 
-            var dir = Vector3.UNIT_Z * rotateX;
+            var dir = Vector3d.UNIT_Z * rotateX;
 
-            var plane = new PlaneF(dir.normalized(), new Vector3(0, 0, 0));
+            var plane = new Plane(dir.normalized(), new Vector3d(0, 0, 0));
 
             foreach (var device in mDevices)
             {
                 var pt = plane.projectVector(device.mPosition);
-                var trf = Matrix4.makeTranslation(0, 0, pt.z + mZ);
+                var trf = Matrix4d.makeTranslation(0, 0, pt.z + mZ);
                 device.Transform(trf * rotateX);
             }
         }

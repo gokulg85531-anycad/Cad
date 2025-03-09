@@ -16,15 +16,15 @@ namespace AnyCAD.Demo.Geometry
         /// <summary>
         /// 折弯左半边的矩阵变换D
         /// </summary>
-        public Matrix4 LeftHandleTransform;
+        public Matrix4d LeftHandleTransform;
         /// <summary>
         /// 折弯右半部分的矩阵变换C
         /// </summary>
-        public Matrix4 RightHandleTransform;
+        public Matrix4d RightHandleTransform;
         /// <summary>
         /// 全局位移变换
         /// </summary>
-        public Matrix4 GlobalOffset;
+        public Matrix4d GlobalOffset;
     }
 
     class Geometry_Bending : TestCase
@@ -73,17 +73,17 @@ namespace AnyCAD.Demo.Geometry
             mCache[mAngleOffset] = info;
 
             //左边的矩阵变换
-            info.LeftHandleTransform = Matrix4.makeRotationAxis(Vector3.UNIT_Z, (float)startAngle);
-            var dir = info.LeftHandleTransform * Vector3.UNIT_X;
-            info.LeftHandleTransform = Matrix4.makeTranslation(dir * 10) * info.LeftHandleTransform * Matrix4.makeTranslation(new Vector3(0,-12,0));
+            info.LeftHandleTransform = Matrix4d.makeRotationAxis(Vector3d.UNIT_Z, startAngle);
+            var dir = info.LeftHandleTransform * Vector3d.UNIT_X;
+            info.LeftHandleTransform = Matrix4d.makeTranslation(dir * 10) * info.LeftHandleTransform * Matrix4.makeTranslation(new Vector3(0,-12,0));
 
             //右边的矩阵变换
-            info.RightHandleTransform = Matrix4.makeRotationAxis(Vector3.UNIT_Z, (float)endAngle);
-            var dir2 = info.RightHandleTransform * Vector3.UNIT_X;
-            info.RightHandleTransform = Matrix4.makeTranslation(dir2 * 10) * info.RightHandleTransform;
+            info.RightHandleTransform = Matrix4d.makeRotationAxis(Vector3d.UNIT_Z, endAngle);
+            var dir2 = info.RightHandleTransform * Vector3d.UNIT_X;
+            info.RightHandleTransform = Matrix4d.makeTranslation(dir2 * 10) * info.RightHandleTransform;
 
             // 全局变换
-            info.GlobalOffset = Matrix4.makeTranslation(new Vector3(0, mDistance, 0));
+            info.GlobalOffset = Matrix4d.makeTranslation(new Vector3d(0, mDistance, 0));
             info.LeftHandleTransform = info.GlobalOffset * info.LeftHandleTransform;
             info.RightHandleTransform = info.GlobalOffset * info.RightHandleTransform;
 
