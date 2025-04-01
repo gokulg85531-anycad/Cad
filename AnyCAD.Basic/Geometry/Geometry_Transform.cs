@@ -80,7 +80,7 @@ namespace AnyCAD.Demo.Geometry
 
             //下面几行目的是把源toposhape往X轴移动一下，然后获取移动后的toposhape
             BrepSceneNode node = BrepSceneNode.Create(box, material, null);
-            var trfCT2 = Matrix4.makeTranslation(4, 0, 0);
+            var trfCT2 = Matrix4d.makeTranslation(4, 0, 0);
             node.SetTransform(trfCT2);
             node.RequestUpdate();
             var tp = TransformTool.TransformByMatrix(node.GetTopoShape(), node.GetTransform());

@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AnyCAD.Rapid.NET" Version="2025.3.9.1455" />
+    <PackageReference Include="AnyCAD.Rapid.NET" Version="2025.4.1.1157" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
     <PackageReference Include="MahApps.Metro" Version="2.4.10" />
   </ItemGroup>

@@ -38,7 +38,7 @@ namespace AnyCAD.Demo.Graphics
                     {
                         var material = materials[random.Next(10)];
                         var node = PrimitiveSceneNode.Create(shape, material);
-                        node.SetTransform(Matrix4.makeTranslation(ii * distance, jj * distance, kk * distance));
+                        node.SetTransform(Matrix4d.makeTranslation(ii * distance, jj * distance, kk * distance));
                         scene.AddNode(node);
                     }
                 }

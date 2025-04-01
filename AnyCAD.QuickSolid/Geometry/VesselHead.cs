@@ -176,7 +176,7 @@ namespace AnyCAD.Demo.Geometry
         }
         #endregion
 
-        public TopoShape? CreateTopo(string name = "defalut")
+        public TopoShape CreateTopo(string name = "defalut")
         {
             switch (HeadType)
             {

@@ -26,7 +26,8 @@ namespace AnyCAD.Test
                             ExtremaPointSurface extrema = new ExtremaPointSurface();
                             if(extrema.Initialize(face, vertex))
                             {
-                                for(int ii=0, len = extrema.GetPointCount(); ii<len; ++ii)
+                                var len = extrema.GetPointCount();
+                                for (int ii=0; ii<len; ++ii)
                                 {
                                     var position = extrema.GetPoint(ii);
                                     var uv = extrema.GetParameter(ii);

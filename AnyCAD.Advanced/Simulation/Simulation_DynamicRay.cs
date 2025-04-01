@@ -8,30 +8,30 @@ namespace AnyCAD.Demo.Graphics
         //点的位置
         ParticleSceneNode mMotionTrail;
         //目标的点
-        List<Vector3> mPoints = new List<Vector3>();
+        List<Vector3d> mPoints = new List<Vector3d>();
 
         //射线
         PrimitiveSceneNode mLineNode;
 
 
         //射线发出的位置
-        Vector3 mStart = new Vector3(200, 0, 200);
+        Vector3d mStart = new Vector3d(200, 0, 200);
 
         //构造矩阵，避免更新射线的几何
-        Matrix4 MakeTransform(Vector3 start, Vector3 end)
+        Matrix4d MakeTransform(Vector3d start, Vector3d end)
         {
-            Vector3 dir = end - start;
-            float len = dir.length();
+            Vector3d dir = end - start;
+            double len = dir.length();
             dir.normalize();
 
-            return Matrix4.makeTranslation(start) * Matrix4.makeRotation(Vector3.UNIT_X, dir) * Matrix4.makeScale(len, 1, 1);
+            return Matrix4d.makeTranslation(start) * Matrix4d.makeRotation(Vector3d.UNIT_X, dir) * Matrix4d.makeScale(len, 1, 1);
         }
         //记录当前射向的点
         int mCurrentIdx = 0;
         //用于控制快慢
         float mTime = 0;
 
-        public RayAnimation(Vector3 position)
+        public RayAnimation(Vector3d position)
         {
             mStart = position.clone();
         }
@@ -44,7 +44,7 @@ namespace AnyCAD.Demo.Graphics
             {
                 for (int jj = 0; jj < ii; ++jj)
                 {
-                    mPoints.Add(new Vector3(jj * offset, 100, ii * offset));
+                    mPoints.Add(new Vector3d(jj * offset, 100, ii * offset));
                 }
             }
 
@@ -80,12 +80,12 @@ namespace AnyCAD.Demo.Graphics
                 return true;
             mTime = 0;
 
-            Vector3 target = mPoints[mCurrentIdx];
+            Vector3d target = mPoints[mCurrentIdx];
 
-            mLineNode.SetTransform(MakeTransform(mStart, target).ToMatrix4d());
+            mLineNode.SetTransform(MakeTransform(mStart, target));
             mLineNode.RequestUpdate();
 
-            mMotionTrail.SetPosition((uint)mCurrentIdx, target);
+            mMotionTrail.SetPosition((uint)mCurrentIdx, Vector3.From(target));
             mMotionTrail.RequestUpdate();
 
             render.RequestDraw(EnumUpdateFlags.Scene);
@@ -102,7 +102,7 @@ namespace AnyCAD.Demo.Graphics
         RigidAnimation mCome;
         RigidAnimation mGo;
         RayAnimation mWorking;
-        Vector3 mWorkingPosition = new Vector3(200, 200, 0);
+        Vector3d mWorkingPosition = new Vector3d(200, 200, 0);
 
         PrimitiveSceneNode mDevice;
         public override void Run(IRenderView render)
@@ -130,7 +130,7 @@ namespace AnyCAD.Demo.Graphics
             mCome.Add(new MoveAnimationClip(mDevice, mWorkingPosition, 0, 5));
 
             mGo = new RigidAnimation();
-            mGo.Add(new MoveAnimationClip(mDevice, new Vector3(-200, -200, 0), 0, 5));
+            mGo.Add(new MoveAnimationClip(mDevice, new Vector3d(-200, -200, 0), 0, 5));
 
             render.EnableAnimation(true);
 

@@ -28,7 +28,7 @@ namespace AnyCAD.Demo.Graphics
                 float z = 2000 * (float)random.NextDouble() - 1000;
 
                 node = new PrimitiveSceneNode(GeometryBuilder.AtomPoint(), material);
-                node.SetTransform(Matrix4.makeTranslation(x, y, z));
+                node.SetTransform(Matrix4d.makeTranslation(x, y, z));
 
                 group.AddNode(node);
             }

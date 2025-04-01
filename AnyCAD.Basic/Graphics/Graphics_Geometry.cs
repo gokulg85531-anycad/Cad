@@ -15,7 +15,7 @@ namespace AnyCAD.Demo.Graphics
 
             var plane = GeometryBuilder.CreatePlane(500, 500);
             var planeNode = new PrimitiveSceneNode(plane, mMaterial1);
-            planeNode.SetTransform(Matrix4.makeTranslation(new Vector3(0, 0, -100)));
+            planeNode.SetTransform(Matrix4d.makeTranslation(new Vector3d(0, 0, -100)));
             render.ShowSceneNode(planeNode);
 
             var box = GeometryBuilder.CreateBox(100, 100, 200);
@@ -24,7 +24,7 @@ namespace AnyCAD.Demo.Graphics
 
             var sphere = GeometryBuilder.CreateSphere(50, 32, 32);
             var sphereNode = new PrimitiveSceneNode(sphere, mMaterial1);
-            sphereNode.SetTransform(Matrix4.makeTranslation(new Vector3(0, 0, 150)));
+            sphereNode.SetTransform(Matrix4d.makeTranslation(new Vector3d(0, 0, 150)));
 
             render.ShowSceneNode(sphereNode);
         }

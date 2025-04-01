@@ -30,7 +30,7 @@ namespace AnyCAD.Demo.Graphics
                     for (int kk = 0; kk < height; ++kk)
                     {
                         var node = new BrepSceneNode(bufferShape);
-                        node.SetTransform(Matrix4.makeTranslation(ii * distance, jj * distance, kk * distance));
+                        node.SetTransform(Matrix4d.makeTranslation(ii * distance, jj * distance, kk * distance));
                         scene.AddNode(node);
                     }
                 }

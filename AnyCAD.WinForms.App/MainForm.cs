@@ -435,6 +435,8 @@ namespace AnyCAD.Demo
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+
             var filePath = DialogUtil.SaveFileDialog("Save", "scene.gltf", new StringList { "glTF Files (.gltf)", "*.gltf" });
             if (filePath.IsEmpty())
             {

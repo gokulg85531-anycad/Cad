@@ -73,7 +73,7 @@ namespace AnyCAD.Demo.Geometry
             float halfW = (float)textNode.GetWorldBBox().getHalfSize().x;
             var dist = end.distanceTo(start);
             float ratio = (dist * 0.5f - halfW) / dist;
-            textNode.SetTransform(Matrix4.makeTranslation((start + end) * ratio + offset) * textNode.GetTransform());
+            textNode.SetTransform(Matrix4d.makeTranslation((start + end) * ratio + offset) * textNode.GetTransform());
 
 
             var line2 = GeometryBuilder.CreateLine(start, start + offset + new Vector3(0,0,-2));

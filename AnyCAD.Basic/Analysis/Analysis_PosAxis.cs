@@ -10,8 +10,8 @@ namespace AnyCAD.Demo.Geometry
         {
             var origonNode = AxisWidget.Create(0.1f, new Vector3(1));
 
-            var angle = (float)Math.PI / 4;
-            var trf = Matrix4.makeTranslation(10, 11, 12) * Matrix4.fromEulerAngleXYZ(angle, angle, angle);
+            var angle = Math.PI / 4;
+            var trf = Matrix4d.makeTranslation(10, 11, 12) * Matrix4d.fromEulerAngleXYZ(angle, angle, angle);
             origonNode.SetTransform(trf);
 
             var dem = trf.decomposeTRS();
@@ -23,7 +23,7 @@ namespace AnyCAD.Demo.Geometry
 
             var cc = trf.extractEulerAngleXYZ();
 
-            var trf2 = Matrix4.makeTranslation(dem.translation) * dem.rotation.toMatrix4();
+            var trf2 = Matrix4d.makeTranslation(dem.translation) * dem.rotation.toMatrix4();
             var origonNode2 = AxisWidget.Create(0.1f, new Vector3(1));
             origonNode2.SetTransform(trf2);
             renderer.ShowSceneNode(origonNode2);
@@ -52,7 +52,7 @@ namespace AnyCAD.Demo.Geometry
                 var dd = dirs[0].Normalized();
                 var ax = new GAx3(pos, GP.DZ(), new GDir(dd.XYZ()));
                 var axw = AxisWidget.Create(0.05f, new Vector3(0.5f));
-                axw.SetTransform(Matrix4.makeFromAx3(ax));
+                axw.SetTransform(Matrix4d.makeFromAx3(ax));
                 renderer.ShowSceneNode(axw);
             }
 

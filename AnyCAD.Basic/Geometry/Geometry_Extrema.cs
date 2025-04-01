@@ -23,7 +23,7 @@ namespace AnyCAD.Demo.Geometry
             {                
                 var point = extrema.GetPoint1(ii);
                 var node = new PrimitiveSceneNode(GeometryBuilder.AtomSphere(), null);
-                node.SetTransform(Matrix4.makeTranslation(Vector3.From(point)));
+                node.SetTransform(Matrix4d.makeTranslation(Vector3d.From(point)));
                 render.ShowSceneNode(node);
             }
 

@@ -20,10 +20,10 @@ namespace AnyCAD.Demo.Graphics
                         continue;
                     }
 
-                    var pt = Vector3.From(ray.getPoint(rst.second));
+                    var pt = ray.getPoint(rst.second);
                     var n = pt.normalized();
 
-                    var trf = Matrix4.makeTranslation(pt) * Matrix4.makeRotation(Vector3.UNIT_Z, n);
+                    var trf = Matrix4d.makeTranslation(pt) * Matrix4d.makeRotation(Vector3d.UNIT_Z, n);
 
                     var ax = AxisWidget.Cast(widget.Clone());
                     ax.ShowArrow('z', false);

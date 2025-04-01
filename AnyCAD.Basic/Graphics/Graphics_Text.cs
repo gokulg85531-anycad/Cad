@@ -28,7 +28,7 @@ namespace AnyCAD.Demo.Graphics
 
                 var node = new PrimitiveSceneNode(shape, fontMaterial);
                 node.SetPickable(false);
-                node.SetTransform(Matrix4.makeTranslation(new Vector3(100, -100, 100)));
+                node.SetTransform(Matrix4d.makeTranslation(new Vector3d(100, -100, 100)));
                 render.ShowSceneNode(node);
             }
             {
@@ -39,7 +39,7 @@ namespace AnyCAD.Demo.Graphics
                 var mesh = FontManager.Instance().CreateMesh("为中华之崛起而代码！");
                 var node = new PrimitiveSceneNode(mesh, fixedSizeMaterial);
                 var scale = 1 / 44.0f;
-                node.SetTransform(Matrix4.makeTranslation(10, 10, 10) * Matrix4.makeScale(scale, scale, scale));
+                node.SetTransform(Matrix4d.makeTranslation(10, 10, 10) * Matrix4d.makeScale(scale, scale, scale));
                 node.SetPickable(false);
 
                 render.ShowSceneNode(node);

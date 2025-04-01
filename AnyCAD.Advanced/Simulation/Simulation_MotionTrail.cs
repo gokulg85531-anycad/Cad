@@ -31,12 +31,12 @@ namespace AnyCAD.Demo.Graphics
             // Initialize Animation
             mAnimation = new RigidAnimation();
 
-            var rotation = Matrix4.makeRotationAxis(new Vector3(1, 0, 0), (float)Math.PI);
-            var trf = Matrix4.makeTranslation(-50, 0, 0) * rotation;
+            var rotation = Matrix4d.makeRotationAxis(new Vector3d(1, 0, 0), Math.PI);
+            var trf = Matrix4d.makeTranslation(-50, 0, 0) * rotation;
 
-            mAnimation.Add(new MatrixAnimationClip(mWorkpiece, mWorkpiece.GetTransformF(), trf, 0, 10));
-            mAnimation.Add(new MatrixAnimationClip(toolNode, toolNode.GetTransformF(), trf, 10, 15));
-            mAnimation.Add(new RotateAnimationClip(toolNode, Vector3.UNIT_Z, (float)Math.PI*4, 16, 20));
+            mAnimation.Add(new MatrixAnimationClip(mWorkpiece, mWorkpiece.GetTransform(), trf, 0, 10));
+            mAnimation.Add(new MatrixAnimationClip(toolNode, toolNode.GetTransform(), trf, 10, 15));
+            mAnimation.Add(new RotateAnimationClip(toolNode, Vector3d.UNIT_Z, Math.PI*4, 16, 20));
 
             render.EnableAnimation(true);
         }
