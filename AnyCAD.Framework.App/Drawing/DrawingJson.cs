@@ -45,11 +45,11 @@ namespace AnyCAD.Drawing
                 {
                     var mesh = FontManager.Instance().CreateMesh(Content);
                     var node = PrimitiveSceneNode.Create(mesh, material);
-                    var trf = Matrix4.makeTranslation((float)Data[0], (float)Data[1], 0);
+                    var trf = Matrix4d.makeTranslation((float)Data[0], (float)Data[1], 0);
                     float height = 0.002f * (float)Data[4];
                     float width = height / (float)Data[5];
-                    var scale = Matrix4.makeScale(height, width, 1);
-                    var rotate = Matrix4.makeRotation(Vector3.UNIT_X, new Vector3((float)Data[2], (float)Data[3], 0));
+                    var scale = Matrix4d.makeScale(height, width, 1);
+                    var rotate = Matrix4d.makeRotation(Vector3.UNIT_X, new Vector3((float)Data[2], (float)Data[3], 0));
                     node.SetTransform(trf * rotate * scale);
                     render.ShowSceneNode(node);
                 }
