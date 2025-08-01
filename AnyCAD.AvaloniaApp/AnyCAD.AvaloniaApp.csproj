@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-	  <PackageReference Include="AnyCAD.Rapid.Avalonia" Version="2025.6.1.1115" />
+	  <PackageReference Include="AnyCAD.Rapid.Avalonia" Version="2025.8.1.1259" />
 	  <PackageReference Include="Avalonia" Version="11.2.8" />
 	  <PackageReference Include="Avalonia.Desktop" Version="11.2.8" />
 	  <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.8" />

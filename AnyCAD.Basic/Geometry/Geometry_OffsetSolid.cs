@@ -11,7 +11,7 @@ namespace AnyCAD.Demo.Geometry
 
             render.ShowShape(solid, ColorTable.Red);
             {
-                var ss = FeatureTool.OffsetShape(solid, 0.1, EnumGeomJoinType.Intersection);
+                var ss = FeatureTool.OffsetShape(solid, 0.1);
                 if (ss == null)
                     return;
 
