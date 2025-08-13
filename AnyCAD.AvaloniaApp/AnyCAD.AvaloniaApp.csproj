@@ -12,10 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
-	  <PackageReference Include="AnyCAD.Rapid.Avalonia" Version="2025.8.1.1259" />
-	  <PackageReference Include="Avalonia" Version="11.2.8" />
-	  <PackageReference Include="Avalonia.Desktop" Version="11.2.8" />
-	  <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.8" />
+	  <PackageReference Include="AnyCAD.Rapid.Avalonia" Version="2025.8.13.1900" />
+	  <PackageReference Include="Avalonia" Version="11.3.3" />
+	  <PackageReference Include="Avalonia.Desktop" Version="11.3.3" />
+	  <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.3" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
   </ItemGroup>
 

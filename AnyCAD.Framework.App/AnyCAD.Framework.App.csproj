@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <PackageReference Include="AnyCAD.SourceGenerator.Tools" Version="1.1.2" />
-	<PackageReference Include="AnyCAD.UIFramework.NET" Version="2025.8.1.1259" />
+	<PackageReference Include="AnyCAD.UIFramework.NET" Version="2025.8.13.1900" />
   </ItemGroup>
 
   <ItemGroup>
