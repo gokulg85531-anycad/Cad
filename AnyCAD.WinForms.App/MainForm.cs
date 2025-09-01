@@ -46,7 +46,7 @@ namespace AnyCAD.Demo
                 this.listBox1.Items.Add(string.Format("NodeId: {0}", item.GetNodeId()));
                 this.listBox1.Items.Add(string.Format("UserId: {0}", item.GetUserId()));
                 this.listBox1.Items.Add(item.GetPoint().GetPosition().ToString());
-                this.listBox1.Items.Add(item.GetShapeType().ToString());
+                this.listBox1.Items.Add(item.GetShapeFilter().ToString());
                 this.listBox1.Items.Add(string.Format("SubIndex: {0}", item.GetShapeIndex()));
                 this.listBox1.Items.Add(string.Format("PrimitiveIndex: {0}", item.GetPoint().GetPrimitiveIndex()));
                 this.listBox1.Items.Add(string.Format("TopoShapeId: {0}", item.GetTopoShapeId()));
@@ -69,7 +69,7 @@ namespace AnyCAD.Demo
                 {                    
                     var shape = node.GetTopoShape();
 
-                    if (item.GetShapeType() == EnumShapeFilter.Edge)
+                    if (item.GetShapeFilter() == EnumShapeFilter.Edge)
                     {
                         var subShape = shape.FindChild(EnumTopoShapeType.Topo_EDGE, (int)item.GetTopoShapeId());
                         if (subShape != null)

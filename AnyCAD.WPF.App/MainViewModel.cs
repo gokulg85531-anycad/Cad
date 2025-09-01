@@ -63,7 +63,7 @@ namespace AnyCAD.WPF
                     msg += $"\nUserId: {item.GetUserId()}";
                     msg += $"\nShapeId: {item.GetShapeIndex()}";
                     msg += $"\nPrimitiveId: {item.GetPrimitiveIndex()}";
-                    msg += $"\nType: {item.GetShapeType().ToString()}";
+                    msg += $"\nType: {item.GetShapeFilter().ToString()}";
                     msg += $"\nTopoShapeId: {item.GetTopoShapeId().ToString()}";
                     var pt = item.GetPosition();
                     msg += $"\nPosition: {pt.x} {pt.y} {pt.z}";
@@ -74,7 +74,7 @@ namespace AnyCAD.WPF
                         var trf = shapeNode.GetWorldTransform().ToTrsf();
                         trf.Invert();
                         var pointOnShape = pt.ToPnt().Transformed(trf);
-                        switch (item.GetShapeType())
+                        switch (item.GetShapeFilter())
                         {
                             case EnumShapeFilter.Edge:
                                 {

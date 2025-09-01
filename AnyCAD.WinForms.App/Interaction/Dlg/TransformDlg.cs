@@ -78,7 +78,7 @@ namespace AnyCAD.Demo
 
             var node =  treeView1.SelectedNode.Tag as SceneNode;
 
-            var pick = new PickedItem(node, new IntersectPoint(EnumShapeFilter.Zero, 0));
+            var pick = new PickedItem(node, node.GetBoundingBox().getCenter());
             var ss = renderView.ViewContext.GetSelectionManager().GetSelection();
             ss.Clear();
             ss.Add(pick, true);

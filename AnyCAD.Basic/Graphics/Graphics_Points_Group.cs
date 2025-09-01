@@ -36,7 +36,7 @@ namespace AnyCAD.Demo.Graphics
             render.ShowSceneNode(group);
 
 
-            var picker = new PickedItem(node, new IntersectPoint(EnumShapeFilter.Zero, 0));
+            var picker = new PickedItem(node, node.GetBoundingBox().getCenter());
 
             render.ViewContext.GetSelectionManager().GetSelection().Add(picker, true);
         }

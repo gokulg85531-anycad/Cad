@@ -34,7 +34,7 @@ namespace AnyCAD.Demo.Graphics
             if (ssn == null)
                 return;
 
-            if (item.GetShapeType() == EnumShapeFilter.Edge)
+            if (item.GetShapeFilter() == EnumShapeFilter.Edge)
             {
                 var edge = ssn.GetTopoShape().FindChild(EnumTopoShapeType.Topo_EDGE, (int)item.GetTopoShapeId());
                 if (edge == null)

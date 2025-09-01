@@ -23,7 +23,7 @@ namespace AnyCAD.Test
 
             var shape = node.GetTopoShape();
 
-            if (hit.GetShapeType() != EnumShapeFilter.Face)
+            if (hit.GetShapeFilter() != EnumShapeFilter.Face)
                 return;
 
             var face = shape.FindChild(EnumTopoShapeType.Topo_FACE, hit.GetTopoShapeId());
