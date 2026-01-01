@@ -1,6 +1,6 @@
 ﻿using AnyCAD.Foundation;
 using System.Collections.Generic;
-
+using AnyCAD.Simulate;
 namespace AnyCAD.Demo.Graphics
 {
     class RayAnimation

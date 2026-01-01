@@ -1,5 +1,5 @@
 ﻿using AnyCAD.Foundation;
-
+using AnyCAD.Simulate;
 namespace AnyCAD.Demo.Graphics
 {
     class Simulation_Collision2 : TestCase

@@ -1,5 +1,6 @@
 ﻿using AnyCAD.Demo;
 using AnyCAD.Foundation;
+using AnyCAD.QuickSolid;
 namespace AnyCAD.Test
 {
 

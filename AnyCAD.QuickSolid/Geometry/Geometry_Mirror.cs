@@ -1,4 +1,5 @@
 ﻿using AnyCAD.Foundation;
+using AnyCAD.QuickSolid;
 using System;
 
 namespace AnyCAD.Demo.Geometry

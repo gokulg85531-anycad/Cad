@@ -10,7 +10,6 @@
 - WinForms简单应用：AnyCAD.WinForms.App
 - WPF简单应用： AnyCAD.WPF.App
 - Avalonia简单应用：AnyCAD.AvaloniaApp
-- WPF复杂应用：AnyCAD.Framework.App
 
 ### 0.2 功能实现
 - 基础功能：位于AnyCAD.Basic工程中
@@ -21,7 +20,8 @@
  - R2022: 2022分支
  - R2023: 2023分支
  - R2024: 2024分支
- - R2025: master
+ - R2025: 2025分支
+ - master: 2026分支
 
 ## 1 环境准备
 
@@ -33,20 +33,11 @@
 - [vc_redist.x86](https://aka.ms/vs/17/release/vc_redist.x86.exe)
 
 #### 1.2.2 .NET Framework
-支持 .Net Framework 4.5.2、4.7.2、4.8
-#### 1.3.2 .NET 6.0、8.0
-推荐使用.NET 6.0/8.0
+支持 .NET Framework 4.8
+#### 1.3.2 .NET 6.0、8.0、10.0
+推荐使用8.0/10.0
 
-### 1.2 Linux
-### 1.2.1 .NET 6.0
-```
-sudo apt-get update && \
-  sudo apt-get install -y dotnet-sdk-6.0
-```
-### 1.2.2 编译
-```
-dotnet msbuild AnyCAD.Rapid.Avalonia.sln
-```
+
 ## 2 程序示例
 
 ### 2.1 建模

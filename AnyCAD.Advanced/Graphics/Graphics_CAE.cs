@@ -1,4 +1,5 @@
 ﻿using AnyCAD.Foundation;
+using AnyCAD.Simulate;
 using Newtonsoft.Json.Linq;
 using System.IO;
 using System.Linq;

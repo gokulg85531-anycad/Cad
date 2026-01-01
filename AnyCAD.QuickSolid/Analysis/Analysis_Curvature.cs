@@ -1,4 +1,6 @@
 ﻿using AnyCAD.Foundation;
+using AnyCAD.QuickSolid;
+using AnyCAD.Simulate;
 using System;
 using System.IO;
 

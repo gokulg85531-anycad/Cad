@@ -120,6 +120,7 @@ namespace FileDialogExtenders
         }
 
         [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public FileDialog MSDialog
         {
             set { _MSdialog = value; }
@@ -142,6 +143,7 @@ namespace FileDialogExtenders
         }
 
         Size _OriginalCtrlSize;
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         internal Size OriginalCtrlSize
         {
             get { return _OriginalCtrlSize; }

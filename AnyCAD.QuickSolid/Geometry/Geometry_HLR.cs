@@ -1,5 +1,5 @@
 ﻿using AnyCAD.Foundation;
-
+using AnyCAD.QuickSolid;
 namespace AnyCAD.Demo.Geometry
 {
     class Geometry_HLR : TestCase

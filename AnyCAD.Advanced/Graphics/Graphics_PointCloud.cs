@@ -1,4 +1,5 @@
 ﻿using AnyCAD.Foundation;
+using AnyCAD.PointCloud;
 using System.IO;
 
 
@@ -46,7 +47,7 @@ namespace AnyCAD.Demo.Graphics
                 return;
        
 
-            PointCloud node = PointCloud.Create(mPositions, mColors, null, 1);
+            var node = PointCloudNode.Create(mPositions, mColors, null, 1);
 
             render.ShowSceneNode(node);
 

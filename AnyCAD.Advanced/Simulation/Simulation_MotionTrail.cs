@@ -1,4 +1,5 @@
 ﻿using AnyCAD.Foundation;
+using AnyCAD.Simulate;
 using System;
 
 namespace AnyCAD.Demo.Graphics

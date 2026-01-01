@@ -1,4 +1,5 @@
 ﻿using AnyCAD.Foundation;
+using AnyCAD.QuickSolid;
 namespace AnyCAD.Demo.Geometry
 {
     class Analysis_Holes : TestCase
