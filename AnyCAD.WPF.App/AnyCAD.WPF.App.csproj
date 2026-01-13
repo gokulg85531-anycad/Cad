@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworks>net6.0-windows;net8.0-windows;net10.0-windows</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+	<UseWindowsForms>true</UseWindowsForms>
+	<BaseOutputPath>..\bin\</BaseOutputPath>
+	<ApplicationIcon>app.ico</ApplicationIcon>
+    <RootNamespace>AnyCAD.WPF</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="app.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="app.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AnyCAD.Rapid.NET" Version="2026.1.1.1401" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AnyCAD.Advanced\AnyCAD.Advanced.csproj" />
+    <ProjectReference Include="..\AnyCAD.Basic\AnyCAD.Basic.csproj" />
+    <ProjectReference Include="..\AnyCAD.QuickSolid\AnyCAD.QuickSolid.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="app.ico" />
+  </ItemGroup>
+
+</Project>

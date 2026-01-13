@@ -1,38 +1,97 @@
-# AnyCAD Rapid Graphics .NET Sample
+# AnyCAD Rapid .NET Sample
+
+本代码仓库包含包含基础功能、运动仿真和高级建模的演示。
+
+## 0 整体说明
+
+### 0.1 程序入口
+界面可以选用WinForms、WPF、AvaloniaUI，分别对应不同的App程序。
+
+- WinForms简单应用：AnyCAD.WinForms.App
+- WPF简单应用： AnyCAD.WPF.App
+- Avalonia简单应用：AnyCAD.AvaloniaApp
+
+### 0.2 功能实现
+- 基础功能：位于AnyCAD.Basic工程中
+- 运动仿真：位于AnyCAD.Advanced工程中。
+- 高级建模：位于AnyCAD.QuickSolid工程中
+
+### 0.3 分支说明:
+ - R2022: 2022分支
+ - R2023: 2023分支
+ - R2024: 2024分支
+ - R2025: 2025分支
+ - master: 2026分支
+
+## 1 环境准备
+
+### 1.1 Windows
+#### 1.1.1 Microsoft Visual C++ Runtime Library
+
+低于VS2022的版本需要下载C++运行时库，下载地址: 
+- [vc_redist.x64](https://aka.ms/vs/17/release/vc_redist.x64.exe)
+- [vc_redist.x86](https://aka.ms/vs/17/release/vc_redist.x86.exe)
+
+#### 1.2.2 .NET Framework
+支持 .NET Framework 4.8
+#### 1.3.2 .NET 6.0、8.0、10.0
+推荐使用8.0/10.0
 
 
-## 1 Prerequisites
+## 2 程序示例
 
-### 1.1 Microsoft Visual C++ Runtime Library
+### 2.1 建模
 
-Download link: 
-- [vc_redist.x64](https://aka.ms/vs/16/release/vc_redist.x64.exe)
-- [vc_redist.x86](https://aka.ms/vs/16/release/vc_redist.x86.exe)
+- 布尔运算
+![pCY0cMq.md.png](https://s1.ax1x.com/2023/06/23/pCY0cMq.md.png)
 
-### 1.2 .Net Framework 4.0+
+- 几何造型
 
-## 2 Showcases
+![pCY0hoF.md.png](https://s1.ax1x.com/2023/06/23/pCY0hoF.md.png)
 
-### 2.1 Modeling
+![pCY0IJJ.md.png](https://s1.ax1x.com/2023/06/23/pCY0IJJ.md.png)
 
-![boolean](showcase/boolean.png)
+### 2.2 特征识别
+![pCY0rGj.md.png](https://s1.ax1x.com/2023/06/23/pCY0rGj.md.png)
 
-![pipe](showcase/pipe.png)
+### 2.3 显示
+![pCY0XdO.md.png](https://s1.ax1x.com/2023/06/23/pCY0XdO.md.png)
 
-![spring](showcase/spring.png)
+![pCY0sRs.md.png](https://s1.ax1x.com/2023/06/23/pCY0sRs.md.png)
 
-### 2.2 Graphcis
+![pCY0bsx.md.png](https://s1.ax1x.com/2023/06/23/pCY0bsx.md.png)
 
-![matplot](showcase/matplot.png)
 
-![CAE](showcase/cae.png)
+### 2.4 交互
+
+![pCY0fdU.md.png](https://s1.ax1x.com/2023/06/23/pCY0fdU.md.png)
+
+### 2.5 跨平台Linux
+
+![linux.loft](showcase/linux.loft.png)
+![linux.loft](showcase/linux.pyramid.png)
+![linux.loft](showcase/linux.sweep.png)
+
 
 ## 3 Documentation
 
-- [API](http://www.opencascade.net/api/classes.html)
-- [Guide](http://www.opencascade.net/guide/)
+- [入门说明](http://www.anycad.cn/guide/)
+- [API手册](http://www.anycad.cn/api/classes.html)
 
-## 4 About
+## 4 更多示例
+### 入门示例：
+https://gitee.com/anycad/rapid.net.starter
+### 高级示例：
+https://gitee.com/anycad/RapidCAX
+### 机器人
+[AnyRobot.NET](https://gitee.com/anycad/anyrobot)
+
+![pCY0WZT.md.png](https://s1.ax1x.com/2023/06/23/pCY0WZT.md.png)
+### 二维绘图
+[AnyDraw.NET](https://gitee.com/anycad/anydraw)
+
+![](https://z1.ax1x.com/2023/10/17/piPQCOP.png)
+## 5 关于
 http://www.anycad.cn
 
 ![Weixin](weixin.jpg)
